@@ -102,7 +102,6 @@
                                                 <td>{item.price}</td>
                                                 <td>{item.is_enabled ? "Y" : "N"}</td>
                                                 <td><button type="button" className="btn btn-primary" onClick={(v)=>{
-                                                    console.log(v);
                                                     setTempProduct(item)
                                                     setTempImgUrl(item.imageUrl)
                                                 }}>查看內容</button></td>
@@ -118,7 +117,7 @@
                             <div className="card mt-3">
                                 <div className="row">
                                     <div className="col-md-4">
-                                        <img src={tempImgUrl} className="img-fluid w-100 h-100 p-3" alt="主圖" />
+                                        <img src={tempImgUrl} className="object-fit-cover img-fluid w-100 h-100 p-3" alt="主圖" />
                                     </div>
                                     <div className="col-md-8">
                                         <div className="card-body pl-3 pr-3">
@@ -133,7 +132,7 @@
                                             {tempProduct?.imagesUrl?.map((item, index)=>{
                                                     return (
                                                         <div key={index} className="col-md-4">
-                                                        <img src={item} className="card-img w-100 h-100 text-start" alt="副圖" onClick={()=>{setTempImgUrl(item)}}/>
+                                                            <img src={item} className="card-img w-100 h-100 text-start object-fit-cover" alt="副圖" onClick={()=>{setTempImgUrl(item)}}/>
                                                         </div>
                                                     )
                                             })}
